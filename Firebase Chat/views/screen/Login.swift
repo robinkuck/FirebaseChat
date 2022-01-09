@@ -9,42 +9,34 @@ import SwiftUI
 
 struct Login: View {
     
-    @State var showRegistrationModalScreen = false
+    @Binding var showRegistrationModalScreen: Bool
     
     var body: some View {
-        NavigationView {
-            ScrollView {
-                VStack(spacing: 16) {
-                    UserCredentialsView(buttonText: "Sign in") {
-                        //TODO perform login
-                    }
-                    
-                    Button {
-                        self.showRegistrationModalScreen = true
-                    } label: {
-                        Text("Register Account")
-                            .font(.system(size: 14, weight: .semibold))
-                    }
+        ScrollView {
+            VStack(spacing: 16) {
+                UserCredentialsView(buttonText: "Sign in") {
+                    //TODO perform login
                 }
-                .padding()
+                
+                Button {
+                    self.showRegistrationModalScreen = true
+                } label: {
+                    Text("Register Account")
+                        .font(.system(size: 14, weight: .semibold))
+                }
+                
             }
-            .navigationBarTitle("Log In")
-            .background(Color(.init(white: 0, alpha: 0.05))
-                            .ignoresSafeArea())
+            .padding()
         }
-        .sheet(isPresented: $showRegistrationModalScreen) {
-            NavigationView {
-                Registration()
-                    .navigationBarItems(leading: Button("Cancel", action: {
-                        self.showRegistrationModalScreen = false
-                    }))
-            }
-        }
+        .background(Color(.init(white: 0, alpha: 0.05))
+                        .ignoresSafeArea())
     }
 }
 
 struct Login_Previews: PreviewProvider {
+    @State static var showRegistrationModalScreen = false
+    
     static var previews: some View {
-        Login()
+        Login(showRegistrationModalScreen: $showRegistrationModalScreen)
     }
 }

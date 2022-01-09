@@ -13,7 +13,7 @@ struct Registration: View {
         ScrollView {
             VStack(spacing: 16) {
                 Button {
-                    
+                    //TODO perform profile icon change
                 } label: {
                     Image(systemName: "person.fill")
                         .font(.system(size: 64))
