@@ -21,7 +21,7 @@ struct Login: View {
                 Button {
                     self.showRegistrationModalScreen = true
                 } label: {
-                    Text("Register Account")
+                    Text("Register")
                         .font(.system(size: 14, weight: .semibold))
                 }
                 

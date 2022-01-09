@@ -15,9 +15,15 @@ struct Registration: View {
                 Button {
                     //TODO perform profile icon change
                 } label: {
-                    Image(systemName: "person.fill")
-                        .font(.system(size: 64))
-                        .padding()
+                    ZStack {
+                        Circle()
+                            .stroke(Color.black, lineWidth: 5)
+                            .foregroundColor(.white)
+                        Image(systemName: "person.fill")
+                            .font(.system(size: 64))
+                            .foregroundColor(.black)
+                            .padding()
+                    }
                 }
                 
                 UserCredentialsView(buttonText: "Create Account") {
