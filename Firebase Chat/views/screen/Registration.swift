@@ -17,8 +17,10 @@ struct Registration: View {
                 } label: {
                     ZStack {
                         Circle()
-                            .stroke(Color.black, lineWidth: 5)
+                            .stroke(Color.black, lineWidth: 2)
                             .foregroundColor(.white)
+                            .shadow(radius: 5)
+                        
                         Image(systemName: "person.fill")
                             .font(.system(size: 64))
                             .foregroundColor(.black)
