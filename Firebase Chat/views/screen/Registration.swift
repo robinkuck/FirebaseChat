@@ -17,7 +17,7 @@ struct Registration: View {
                 } label: {
                     ZStack {
                         Circle()
-                            .stroke(Color.black, lineWidth: 2)
+                            .stroke(Color.black, lineWidth: 3)
                             .foregroundColor(.white)
                             .shadow(radius: 5)
                         
